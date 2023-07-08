@@ -1,0 +1,101 @@
+sku_id,sku_name,group_id,sku_purchase_price,sku_retail_price
+1,Puree - Kiwi,2,73.00,97.00
+2,Beer - Upper Canada Light,11,120.00,188.00
+3,Muffin Puck Ww Carrot,8,29.00,51.00
+4,Dehydrated Kelp Kombo,1,122.00,151.00
+5,Cheese - Camembert,4,213.00,275.00
+6,Pie Filling - Apple,8,43.00,62.00
+7,Cleaner - Bleach,12,89.00,100.00
+8,Vinegar - White,13,14.00,29.00
+9,Sole - Fillet,5,150.00,204.00
+10,"Beef - Rouladin, Sliced",7,850.00,1200.00
+11,Breadfruit,1,350.00,420.00
+12,Tea - Camomele,10,140.00,199.00
+13,Nori Sea Weed,1,158.00,239.00
+14,Onions Granulated,1,86.00,120.00
+15,Bulgar,3,160.00,231.00
+16,Appetizer - Tarragon Chicken,6,490.00,570.00
+17,Numi - Assorted Teas,10,210.00,234.00
+18,Glycerine,13,43.00,59.00
+19,Loquat,13,188.00,279.00
+20,Lamb - Sausage Casings,7,260.00,287.00
+21,Neckerchief Blck,13,960.00,1069.00
+22,Muffin Hinge 117n,8,48.00,65.00
+23,Cloves - Whole,13,84.00,120.00
+24,Shiratamako - Rice Flour,3,78.00,99.00
+25,"Wine - White, Ej Gallo",11,800.00,1200.00
+26,Beans - Yellow,3,152.00,238.00
+27,Muffin Mix - Morning Glory,8,94.00,145.00
+28,Grapefruit - White,2,148.00,174.00
+29,Cookie Double Choco,8,48.00,67.00
+30,Fudge - Cream Fudge,9,100.00,126.00
+31,Egg - Salad Premix,6,95.00,129.00
+32,Salmon - Canned,5,890.00,1189.00
+33,Bagel - 12 Grain Preslice,8,65.00,95.00
+34,Wine - Cava Aria Estate Brut,11,630.00,744.00
+35,Table Cloth 53x69 White,13,522.00,600.00
+36,Versatainer Nc - 888,13,660.00,738.00
+37,Hipnotiq Liquor,11,490.00,620.00
+38,"Split Peas - Green, Dry",3,120.00,141.00
+39,Piping - Bags Quizna,13,80.00,100.00
+40,"Pasta - Spaghetti, Dry",3,120.00,150.00
+41,Wine - Alsace Riesling Reserve,11,650.00,750.00
+42,Sugar - Fine,9,93.00,127.00
+43,Peas - Frozen,3,56.00,68.00
+44,"Bread - White, Sliced",8,65.00,72.00
+45,Paper Towel Touchless,13,53.00,74.00
+46,Coffee Swiss Choc Almond,10,285.00,314.00
+47,"Cheese - Brie, Cups 125g",4,730.00,853.00
+48,Flour - Cake,9,50.00,69.00
+49,Pasta - Angel Hair,3,90.00,128.00
+50,"Turnip - White, Organic",1,119.00,177.00
+51,Hog / Sausage Casing - Pork,7,500.00,630.00
+52,Muffin Hinge - 211n,8,125.00,191.00
+53,Cabbage - Green,1,48.00,67.00
+54,Milk - 2%,4,69.00,94.00
+55,"Lentils - Green, Dry",3,180.00,248.00
+56,Thermometer Digital,13,90.00,122.00
+57,"Salmon - Smoked, Sliced",5,840.00,1100.00
+58,"Chicken - Breast, 5 - 7 Oz",6,316.00,375.00
+59,Sauce - Soy Low Sodium - 3.87l,13,74.00,100.00
+60,"Cheese - Cheddar, Mild",6,700.00,868.00
+61,Pork - Belly Fresh,7,538.00,680.00
+62,Steam Pan Full Lid,13,65.00,90.00
+63,Ecolab Crystal Fusion,13,97.00,139.00
+64,Huck Towels White,13,382.00,516.00
+65,"Vermouth - White, Cinzano",11,470.00,633.00
+66,Cheese - Parmesan Cubes,4,810.00,967.00
+67,Wine - Chateau Aqueria Tavel,11,440.00,596.00
+68,Cheese - Swiss,4,566.00,690.00
+69,Nantucket - 518ml,10,162.00,185.00
+70,Calypso - Pineapple Passion,10,183.00,255.00
+71,Nantucket Orange Juice,10,160.00,190.00
+72,The Pop Shoppe - Grape,2,164.00,257.00
+73,Cheese - Pied De Vents,4,860.00,1019.00
+74,"Salmon - Whole, 4 - 6 Pounds",5,928.00,1262.00
+75,Sambuca - Ramazzotti,11,996.00,1290.00
+76,Pike - Frozen Fillet,5,560.00,712.00
+77,Langers - Ruby Red Grapfruit,11,330.00,390.00
+78,Sauce - Hoisin,13,69.00,95.00
+79,Cod - Black Whole Fillet,5,350.00,475.00
+80,"Asparagus - Green, Fresh",10,120.00,161.00
+81,Cheese - Brick With Pepper,4,519.00,710.00
+82,Salad Dressing,1,85.00,105.00
+83,Cheese - Comte,4,1000.00,1200.00
+84,"Beef - Tongue, Cooked",7,560.00,689.00
+85,Skewers - Bamboo,13,330.00,394.00
+86,Pastry - Carrot Muffin - Mini,8,93.00,118.00
+87,Chocolate Liqueur - Godet White,11,730.00,864.00
+88,Sage Ground Wiberg,13,180.00,181.00
+89,Grenadillo,11,310.00,389.00
+90,"Bread - Pita, Mini",8,33.00,53.00
+91,"Wine - White, Lindemans Bin 95",11,195.00,255.00
+92,Wine - Jackson Triggs Okonagan,11,790.00,974.00
+93,Oil - Coconut,13,150.00,196.00
+94,Cookie Dough - Chunky,9,164.00,195.00
+95,Ice Cream Bar - Hagen Daz,9,162.00,188.00
+96,Ecolab - Hobart Washarm End Cap,11,546.00,770.00
+97,Wiberg Super Cure,13,200.00,289.00
+98,Sugar - White Packet,9,87.00,104.00
+99,Tarragon - Fresh,13,140.00,157.00
+100,"Napkin - Cocktail,beige 2 - Ply",13,47.00,84.00
