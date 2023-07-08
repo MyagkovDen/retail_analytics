@@ -3,7 +3,7 @@ create table personal_information
 	customer_id SERIAL primary key,
 	customer_name VARCHAR(25)check(substring(customer_name, 1, 1) = upper(substring(customer_name, 1, 1))),
 	customer_surname VARCHAR(25)check(substring(customer_surname, 1, 1) = upper(substring(customer_surname, 1, 1))),
-	customer_primary_email VARCHAR(25) check (customer_primary_email like '%@%'),
+	customer_primary_email VARCHAR(45) check (customer_primary_email like '%@%'),
 	customer_primary_phone VARCHAR(12) check (customer_primary_phone like '+7__________')
 );
 
@@ -27,18 +27,12 @@ create table product_grid
 	group_id varchar(20) references sku_group(group_id),
 	sku_purchase_price numeric(9,2),
 	sku_retail_price numeric(9,2),
-	UNIQUE (sku_id, sku_purchase_price),
-	UNIQUE (sku_id, sku_retail_price)
 );
 
 create table stores
 (
 	transaction_store_id int primary key,
-	sku_id varchar(20) references product_grid(sku_id),
-	sku_purchase_price numeric(9,2),
-	sku_retail_price numeric(9,2),
-	foreign key(sku_id, sku_purchase_price) references product_grid(sku_id, sku_purchase_price),
-	foreign key(sku_id, sku_retail_price) references product_grid(sku_id, sku_retail_price)
+	store_address varchar(45),
 );
 
 create table transactions
@@ -65,5 +59,18 @@ create table date_of_analysis_formation
 	analysis_formation timestamp
 );
 
+create procedure import_data (table_name varchar, file_path varchar) as $$
+declare tbl varchar := 'copy ' || table_name || ' from ' || file_path || ' delimiter '','' csv header';
+begin
+	execute tbl;
+end;
+$$ language plpgsql;
+
+create procedure export_data (table_name varchar, file_path varchar) as $$
+declare tbl varchar := 'copy ' || table_name || ' to ' || file_path || ' delimiter '','' csv header';
+begin
+	execute tbl;
+end;
+$$ language plpgsql;
 
 
