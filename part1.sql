@@ -22,7 +22,7 @@ create table sku_group
 
 create table product_grid
 (
-	sku_id varchar(20) primary key,
+	sku_id int(20) primary key,
 	sku_name varchar(45),
 	group_id varchar(20) references sku_group(group_id),
 	sku_purchase_price numeric(9,2),
@@ -46,8 +46,8 @@ create table transactions
 
 create table checks
 (
-	transaction_id int primary key references transactions(transaction_id),
-	sku_id varchar(20) references product_grid(sku_id),
+	transaction_id int references transactions(transaction_id),
+	sku_id int(20) references product_grid(sku_id),
 	sku_amount numeric(9,2),
 	sku_sum numeric(9,2),
 	sku_sum_paid numeric(9,2),
@@ -60,14 +60,16 @@ create table date_of_analysis_formation
 );
 
 create procedure import_data (table_name varchar, file_path varchar) as $$
-declare tbl varchar := 'copy ' || table_name || ' from ' || file_path || ' delimiter '','' csv header';
+declare 
+	tbl varchar := 'copy ' || table_name || ' from ' || file_path || ' delimiter '','' csv header';
 begin
 	execute tbl;
 end;
 $$ language plpgsql;
 
 create procedure export_data (table_name varchar, file_path varchar) as $$
-declare tbl varchar := 'copy ' || table_name || ' to ' || file_path || ' delimiter '','' csv header';
+declare 
+	tbl varchar := 'copy ' || table_name || ' to ' || file_path || ' delimiter '','' csv header';
 begin
 	execute tbl;
 end;
