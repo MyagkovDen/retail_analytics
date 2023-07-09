@@ -9,7 +9,7 @@ create table personal_information
 
 create table cards
 (
-	customer_card_id SERIAL primary key,
+	customer_card_id serial primary key,
 	customer_id INT,
 	foreign key (customer_id) references personal_information(customer_id)
 );
