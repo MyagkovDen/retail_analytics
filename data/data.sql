@@ -17,11 +17,11 @@ values
 (12, 'household chemical goods'),
 (13, 'others');
 
-insert into cards
-values (default, 11),(default, 16),(default, 3),(default, 16),(default, 10),(default, 7),(default, 14),
-(default, 13), (default, 8),(default, 2),(default, 12),(default, 5),(default, 1),(default, 9),(default, 20),
-(default, 17),(default, 8), (default, 5),(default, 7),(default, 11),(default, 7),(default, 14),(default, 10),
-(default, 19),(default, 6),(default, 15), (default, 9),(default, 4),(default, 12),(default, 3);
+insert into cards 
+values (default, 11),(default, 5),(default, 3),(default, 6),(default, 10),(default, 7),(default, 14),
+(default, 13), (default, 8),(default, 2),(default, 12),(default, 5),(default, 1),(default, 9),(default, 4),
+(default, 3),(default, 8), (default, 5),(default, 7),(default, 11),(default, 7),(default, 14),(default, 10),
+(default, 2),(default, 6),(default, 15), (default, 9),(default, 4),(default, 12),(default, 3);
 
 insert into stores
 values
@@ -30,7 +30,7 @@ values
 (3, 'Alma-Atinskaya, 8'),
 (4, 'Borisovskie Prudy, 8a');
 
-call fill_checks(3, 12);
+call fill_checks(5, 8);
 call fill_transactions();
 
 create procedure fill_checks (number_of_transactions int, max_number_of_goods int) as $$
@@ -61,7 +61,7 @@ begin
 	end loop;
 end $$ language plpgsql;
 
-create procedure fill_transactions() as $$
+create or replace procedure fill_transactions() as $$
 declare 
 	n int = (select count(*) from transactions) + 1;
 	i int = min (transaction_id) from transactions where transaction_sum IS null;
@@ -69,7 +69,7 @@ declare
 	this_card_id int;
 	this_sum numeric;
 	this_datetime timestamp = coalesce ((select max(transaction_datetime) from transactions), 
-'2023-01-01T00:00:00.000Z')+interval '1 day';
+'2023-06-01T00:00:00.000Z')+ interval '1 day';
 	this_store_id int;
 begin
 	while i < n loop

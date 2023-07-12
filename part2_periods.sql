@@ -1,16 +1,23 @@
-create view periods_without_frequncy as
-select c.customer_id , pg.group_id , min(t.transaction_datetime) as first_group_purchase_date,
-max(t.transaction_datetime) as last_group_purchase_date, count(t.transaction_id) as group_purchase
-from cards c join transactions t on c.customer_card_id = t.customer_card_id join checks c2 on t.transaction_id 
-= c2.transaction_id join product_grid pg on c2.sku_id = pg.sku_id 
-group by c.customer_id , pg.group_id 
-order by c.customer_id , pg.group_id ;
-
-create view periods as
-with pwf as (select customer_id, group_id, first_group_purchase_date, last_group_purchase_date, group_purchase,
-sum(group_purchase) over(partition by customer_id) as overall_cost
-from periods_without_frequncy)
-select customer_id, group_id, first_group_purchase_date, last_group_purchase_date, group_purchase, 
-round((group_purchase / overall_cost * 100), 2) as group_frequency
-from pwf;
+CREATE OR REPLACE VIEW periods AS
+	WITH purchases_periods AS (
+		SELECT customer_id, 
+			(MAX(transaction_datetime) - MIN(transaction_datetime))  purchase_period
+		FROM cards c 
+			JOIN transactions t ON c.customer_card_id = t.customer_card_id 
+			JOIN checks c2 ON t.transaction_id = c2.transaction_id 
+		GROUP BY customer_id
+	)
+	SELECT c.customer_id , pg.group_id , 
+		MIN(t.transaction_datetime) AS first_group_purchase_date,
+		MAX(t.transaction_datetime) AS last_group_purchase_date, 
+		COUNT(t.transaction_id) AS group_purchase,
+		(DATE_PART('day', purchase_period / COUNT(t.transaction_id)) + 1) AS group_frequency,
+		ROUND (MIN (c2.sku_discount / c2.sku_sum * 100), 2) AS group_min_discount
+	FROM cards c 
+		JOIN transactions t ON c.customer_card_id = t.customer_card_id 
+		JOIN checks c2 ON t.transaction_id = c2.transaction_id 
+		JOIN product_grid pg ON c2.sku_id = pg.sku_id 
+		JOIN purchases_periods ON c.customer_id = purchases_periods.customer_id
+	GROUP BY c.customer_id , pg.group_id, purchase_period 
+	ORDER BY c.customer_id , pg.group_id ;
 
